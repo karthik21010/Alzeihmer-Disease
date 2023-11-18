@@ -1,0 +1,61 @@
+{% extends 'doctorbase.html'%}
+{% load static %}
+{% block contents %}
+<style>
+    #gtco-header {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(111,111,207,1) 35%, rgba(0,212,255,1) 100%);
+        color: #000000;
+        padding: 60px 0;
+        text-align: center;
+    }
+</style>
+<header id="gtco-header" class="gtco-cover">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0 text-left">
+						<div class="display-t">
+							<div class="display-tc">
+								<div class="row">
+                                    <h1 style="text-align: center;"><b>Welcome to Doctor Page</b></h1>
+
+                                    <table border="2px" style="position:absolute;right:260px;width:40px;padding: 5px;">
+
+                    <tr>
+                <th style="color: white;padding:10px;text-align: center;">S.No</th>
+                <th style="color: white;padding:10px;text-align: center;">Name</th>
+                <th style="color: white;padding:10px;text-align: center;">Mble</th>
+                <th style="color: white;padding:10px;text-align: center;">Gender</th>
+                <th style="color: white;padding:10px;text-align: center;">Age</th>
+                <th style="color: white;padding:10px;text-align: center;">Symptomps</th>
+
+                        <th style="color: white;padding:10px;text-align: center;">Treatment</th></tr>
+
+                         {% for i in object %}
+                         <tr>
+                         <td style="color: white;padding:10px;text-align: center;">{{ i.id }}</td>
+                         <td style="color: white;padding:10px;text-align: center;">{{ i.name }}</td>
+                         <td style="color: white;padding:10px;text-align: center;">{{ i.mobileno }}</td>
+                         <td style="color: white;padding:10px;text-align: center;">{{ i.gender }}</td>
+
+                         <td style="color: white;padding:10px;text-align: center;">{{ i.age }}</td>
+                         <td style="color: white;padding:10px;text-align: center;">{{ i.symptomps }}</td>
+                             <td style="color:rgb(0, 0, 0)"> <a href="/addtreatment/?name={{ i.id }}" >Disease identification</a></td>
+
+                         </tr>
+                                    {% endfor %}
+                                    </table>
+
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+</header>
+
+{% endblock %}
+

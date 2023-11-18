@@ -1,0 +1,41 @@
+{% extends 'doctorbase.html'%}
+{% load static %}
+{% block contents %}
+<style>
+    #gtco-header {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(111,111,207,1) 35%, rgba(0,212,255,1) 100%);
+        color: #000000;
+        padding: 60px 0;
+        text-align: center;
+    }
+</style>
+<header id="gtco-header" class="gtco-cover">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0 text-left">
+						<div class="display-t">
+							<div class="display-tc">
+								<div class="row">
+                                    <h1 style="text-align: center;"><b>Welcome Doctor</b></h1>
+                                    <form action="/report/" method="post">
+                                        {% csrf_token %}
+                                        Name<input type="text" name="name" value="{{object.name}}" readonly></br>
+                                        Age<input type="text" name="age" value="{{object.age}}" readonly></br>
+                                        Symptons<input type="text" name="symptomps" value="{{object.symptomps}}" readonly></br>
+                                        Famd<input type="text" name="famldata" value="{{object.famldata}}" readonly></br>
+                                        Chk-Famd<input type="text" name="valid" ></br>
+                                        MMSE<input type="text" name="mmse" ></br>
+                                        <input type="submit" value="submit">
+                                    </form>
+                                </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+</header>
+
+{% endblock %}
+

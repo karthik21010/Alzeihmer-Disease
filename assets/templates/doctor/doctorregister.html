@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block contents %}
+<style>
+    #gtco-header {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(111,111,207,1) 35%, rgba(0,212,255,1) 100%);
+        color: #000000;
+        padding: 60px 0;
+        text-align: center;
+    }
+</style>
+<header id="gtco-header" class="gtco-cover">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0 text-left">
+						<div class="display-t">
+							<div class="display-tc">
+								<div class="row">
+                                    <h1 style="text-align: center;"><b>Welcome to Doctor Page</b></h1>
+                                    <center style="color: white;font-size: 30px;font-weight: bold;">Doctor registration</center></h3>
+                          <center> <h4><form action="/doctorregister/" method="POST">
+                                    {% csrf_token %}
+                                    <table style="margin-left:auto;margin-right:auto;width:40%;">
+                                          <tr><td style="color:rgb(255, 255, 255);font-weight:bold;font-size:15px;">Doctor name :</td><td>{{form.name}}</td></tr>
+                            <tr><td style="color:rgb(255, 252, 252);font-weight:bold;font-size:15px;">Password :</td><td>{{form.passwd}}</td></tr>
+                            <tr><td style="color:rgb(255, 255, 255);font-weight:bold;font-size:15px;">Confirm_Password :</td><td>{{form.cwpasswd}}</td></tr>
+                            <tr><td style="color:rgb(255, 255, 255);font-weight:bold;font-size:15px;">Email :</td><td>{{form.email}}</td></tr>
+                            <tr><td style="color:rgb(255, 255, 255);font-weight:bold;font-size:15px;">Mobile :</td><td>{{form.mobileno}}</td></tr>
+                            <tr><td style="color:rgb(255, 255, 255);font-weight:bold;font-size:15px;">Specialization :</td><td>{{form.specialization}}</td></tr>
+                            <tr><td></td><td>{{form.status}}</td></tr>
+                            <tr><td style="position: absolute;right: 540px;"><br><input type="submit" value="Submit" style="color:black;border-radius:10px;width: 100px;font-weight: bold;"></td></tr>
+                                    </table>
+                                
+
+                          </form></h4></center>
+
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <font color='darkred'> {{ message }}</font>
+                                {% endfor %}
+                            {% endif %}
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+</header>
+
+{% endblock %}
+
